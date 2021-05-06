@@ -8,7 +8,7 @@ const forecast = (longitude, latitude, callback) => {
         } else if(body.error){                                           // old version without destructuring will have response before body
             callback('Unable to find the location by weather API', undefined)
         } else {
-            callback(undefined,'It is currently ' + body.current.temperature + ' degrees out. It feels like ' + body.current.feelslike + ' degrees out.') // old version without destructuring will have response before body
+            callback(undefined,'It is currently ' + body.current.temperature + ' degrees out. It feels like ' + body.current.feelslike + ' degrees out. The humidity is ' + body.current.humidity + ' % and the wind speed is ' + body.current.wind_speed + ' km/h') // old version without destructuring will have response before body
         }
     })
 }
